@@ -1,7 +1,5 @@
-// #little
-const black = document.querySelector('.black')
-console.log(black)
-black.addEventListener('click', () => {
+const little=$('.black').find('.little')
+console.log(little)
+little.addEventListener('click', () => {
     console.log('chufa')
-
 })
