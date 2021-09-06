@@ -16,12 +16,16 @@ a {
 }
 .contain {
   display: flex;
+  
 }
+
 body {
   background: rgb(242, 242, 242);
 }
-.left {
-  width: 20%;
+.positions{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
 }
 .right {
   flex-grow: 8;
@@ -32,7 +36,7 @@ body {
 }
 form {
   position: relative;
-  width: 700px;
+  width: 70%;
   margin: 0 auto;
 }
 input,
@@ -74,8 +78,9 @@ button {
   border-radius: 5px;
   width: 90%;
   margin: 0 auto;
-
+  background: white;
   margin-top: 20px;
+  padding: 10px 0;
 }
 .black {
   margin-top: 8px;
@@ -88,22 +93,33 @@ button {
 }
 .little {
   background: white;
-  width: 19%;
-  margin-right: 12px;
+  width: 20%;
+  margin: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 12px;
   border-radius: 5px;
   position: relative;
+  border: 1px solid #e4ecf3;
+  box-shadow: 1px 2px 3px #f2f6f8;
 }
 .little:hover {
   background: #7ba7ab;
   cursor: pointer;
   color: white;
 }
+
+@media (min-width: 768px){
+    .little {
+        width:  17%;
+    }
+}
+
+
+
 .little .logo {
-  font-size: 80px;
+  font-size: 4em;
 }
 .little .url {
   padding: 0 0 10px 0;
@@ -114,7 +130,7 @@ button {
   right: 10px;
   cursor: default;
   display: none;
-  font-size: 20px;
+  font-size: 1em;
 }
 .little:hover > .close {
   display: block;
@@ -128,6 +144,7 @@ button {
   height: 150px;
   width: 19%;
   margin: 1px 6px 12px 5px;
+  
 }
 
 .little2 {
@@ -145,6 +162,7 @@ button {
     width: 90%;
   }
   .black {
+    margin: 0;
     justify-content: space-between;
   }
   .content {
@@ -153,7 +171,9 @@ button {
     margin-bottom: 60px;
   }
   .little {
-    width: 46%;
+    width: 45%;
+    margin: 2%;
+
   }
   .little1 {
     width: 46%;
@@ -167,11 +187,14 @@ ol {
   list-style-type: none;
 }
 .left {
-  background: white;
-  height: 720px;
-}
+    width: 30%;
+    background: #30333c;
+    height: 100vm;
+    color:white;
+  }
+
 .left li {
-  padding: 10px 40px;
+  padding: 10px 30px;
 }
 .left li:hover {
   background: #7ba7ab;
@@ -180,21 +203,30 @@ ol {
   display: flex;
   align-items: center;
 }
-
+.left .icon{
+    margin-right: 7px;
+}
+.left .mulu{
+   font-size: 2em;
+   display: flex;
+   justify-content: center;
+}
 .col-black {
   display: flex;
   flex-wrap: wrap;
   margin-right: -20px;
+
 }
 .col-black .col-little {
   padding: 10px 20px;
   width: 199px;
-  margin-right: 5px;
+  margin: 5px;
   margin-top: 20px;
   background: white;
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  border: 1px solid #e4ecf3;
 }
 .col-black .col-little:hover {
   background: #7ba7ab;
@@ -203,8 +235,20 @@ ol {
 @media (max-width: 500px) {
   .col-black {
     justify-content: space-between;
+    margin-right: 0;
   }
   .col-black .col-little {
-    width: 180px;
+    width: 170px;
+    margin-right: 0;
   }
+}
+
+@media (min-width: 481px){
+    .right{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .left{
+        max-width: 30%;
+    }
 }

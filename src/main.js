@@ -43,17 +43,6 @@ $('.add').on('click', () => {
     render()
 })
 
-
-// $(window).scroll(function(){
-//     if($("#date").offset().top - $(document).scrollTop() < 0){
-//          let pos = $(document).scrollTop()
-//          $("#date").stop().animate({top: pos+"px"}, "fast");
-//     }else if($(window).height()-[$("#date").offset().top - $(document).scrollTop()]-$("#date").height() < 0){
-//          let pos = $(document).scrollTop()
-//          $("#date").stop().animate({top: pos+"px"}, "fast");
-//      }
-// })
-
 const stone=[
     { title: 'MDN Web文档', url: 'https://developer.mozilla.org/zh-CN/docs/Learn', intro: '' },
     { title: 'JS Bin', url: 'https://jsbin.com/', intro: '' },
@@ -64,6 +53,9 @@ const stone=[
     { title: 'MDN Web文档', url: 'https://developer.mozilla.org/zh-CN/docs/Learn', intro: '' },
     { title: 'JS Bin', url: 'https://jsbin.com/', intro: '' },
     { title: '掘金', url: 'https://juejin.cn/', intro: '' }, 
+    { title: 'Element', url: 'https://element.eleme.cn/#/zh-CN', intro: '' },
+    { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' },
+    { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' },
     { title: 'Element', url: 'https://element.eleme.cn/#/zh-CN', intro: '' },
     { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' },
     { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' }
@@ -81,3 +73,15 @@ const mStone = () => {
     })
  }
  mStone()
+
+
+// // 目录固定？
+// $(window).scroll(function(){
+//     if($("#date").offset().top - $(document).scrollTop() < 0){
+//          let pos = $(document).scrollTop()
+//          $("#date").stop().animate({top: pos+"px"}, "fast");
+//     }else if($(window).height()-[$("#date").offset().top - $(document).scrollTop()]-$("#date").height() < 0){
+//          let pos = $(document).scrollTop()
+//          $("#date").stop().animate({top: pos+"px"}, "fast");
+//      }
+// })
