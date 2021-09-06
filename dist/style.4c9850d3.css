@@ -108,6 +108,9 @@ button {
   background: #7ba7ab;
   cursor: pointer;
   color: white;
+  opacity:0.8;
+  transform: scale(1.15);
+
 }
 
 @media (min-width: 768px){
