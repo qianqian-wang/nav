@@ -104,12 +104,65 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// #little
-var black = document.querySelector('.black');
-console.log(black);
-black.addEventListener('click', function () {
-    console.log('chufa');
+
+var x = localStorage.getItem('x');
+var url = JSON.parse(x);
+var localHash = url || [{ logo: 'B', url: 'www.baidu.com' }];
+var simplifyUrl = function simplifyUrl(url) {
+    return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
+};
+var render = function render() {
+    $('.content').find('.little:not(.add)').remove();
+    localHash.forEach(function (node, index) {
+        var $li = $('\n        <div class="little">\n            <div class=\'logo\'>' + node.logo + '</div>\n            <div class=\'url\'>' + simplifyUrl(node.url) + '</div>\n            <div class=\'close\'>x</div>\n        </div>').insertBefore('.black>.add');
+        $li.on('click', function () {
+            window.open(node.url);
+        });
+        $li.on('click', '.close', function (e) {
+            e.stopPropagation();
+            localHash.splice(index, 1);
+            localStorage.setItem('x', JSON.stringify(localHash));
+            render();
+        });
+    });
+};
+render();
+$('.add').on('click', function () {
+    var url = window.prompt('请输入网址');
+    if (url) {
+        if (url.indexOf('http') !== 0) {
+            url = 'https://' + url;
+        }
+        localHash.push({
+            logo: simplifyUrl(url)[0].toUpperCase(),
+            url: url
+        });
+        localStorage.setItem('x', JSON.stringify(localHash));
+    }
+    render();
 });
+
+// $(window).scroll(function(){
+//     if($("#date").offset().top - $(document).scrollTop() < 0){
+//          let pos = $(document).scrollTop()
+//          $("#date").stop().animate({top: pos+"px"}, "fast");
+//     }else if($(window).height()-[$("#date").offset().top - $(document).scrollTop()]-$("#date").height() < 0){
+//          let pos = $(document).scrollTop()
+//          $("#date").stop().animate({top: pos+"px"}, "fast");
+//      }
+// })
+
+var stone = [{ title: 'MDN Web文档', url: 'https://developer.mozilla.org/zh-CN/docs/Learn', intro: '' }, { title: 'JS Bin', url: 'https://jsbin.com/', intro: '' }, { title: '掘金', url: 'https://juejin.cn/', intro: '' }, { title: 'Element', url: 'https://element.eleme.cn/#/zh-CN', intro: '' }, { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' }, { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' }, { title: 'MDN Web文档', url: 'https://developer.mozilla.org/zh-CN/docs/Learn', intro: '' }, { title: 'JS Bin', url: 'https://jsbin.com/', intro: '' }, { title: '掘金', url: 'https://juejin.cn/', intro: '' }, { title: 'Element', url: 'https://element.eleme.cn/#/zh-CN', intro: '' }, { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' }, { title: 'jQuery中文文档', url: ' https://www.jquery123.com/', intro: '' }];
+
+var mStone = function mStone() {
+    stone.forEach(function (node, index) {
+        var $li = $('\n        <div class="col-little">\n          <div class=\'title\'>' + node.title + '</div>\n        </div>').appendTo('.col-black');
+        $li.on('click', function () {
+            window.open(node.url);
+        });
+    });
+};
+mStone();
 },{}],"C:\\Users\\123\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -139,7 +192,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54432' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57220' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

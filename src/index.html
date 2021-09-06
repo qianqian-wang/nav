@@ -13,7 +13,32 @@
 
 <body>
     <div class='contain'>
-        <div class='left'>固定目录</div>
+        <div class='left' id='date'>
+                <ol>
+                    <li>目录</li>
+                    <a href="person">
+                        <li> 
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shezhi"></use>
+                            </svg>
+                            <div class="book">
+                                自定义
+                            </div> 
+                        </li>
+                    </a>
+                    <a href="#study">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shuben"></use>
+                            </svg>
+                            <div class="book">
+                                在线学习 
+                            </div> 
+                                                     
+                        </li>
+                    </a>
+                </ol>
+        </div>
         <div class="right">
             <div class="search bar1">
                 <form action="http://www.baidu.com/s" method="get">
@@ -21,41 +46,32 @@
                     <button type="submit"></button>
                 </form>
             </div>
-            <div class="content">
-                <div class='item'>自定义</div>
-                <div class="black">
-                    <div class="little">
-                        yikuai
+            <div class="content" id='person'>
+                <div class='item'>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shezhi"></use>
+                    </svg>
+                    自定义网址
+                </div>
+                <div class="black"> 
+                    <div class="little add">
+                        <div class='logo'>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jiahao"></use>
+                            </svg>
+                        </div>
+                        <div class='url'>自定义</div>
                     </div>
                 </div>
             </div>
-            <div class="content">
-                <div class='item'>在线学习</div>
-                <div class="black">
-                    <div class="little1">
-                        <a href="https://xiedaimala.com/" target="_blank" class="links">
-                            <div class="little2">
-                                <div class='title'>饥人谷</div>
-                                <div class='introduce'>课程网站</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="little1">
-                        <a href="https://wangdoc.com/html/index.html" target="_blank" class="links">
-                            <div class="little2">
-                                <div class='title'>网道</div>
-                                <div>HTML教程</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="little1">
-                        <a href="https://developer.mozilla.org/zh-CN/" target="_blank" class="links">
-                            <div class="little2">
-                                <div class='title'>MDN</div>
-                                <div>找啥全上MDN</div>
-                            </div>
-                        </a>
-                    </div>
+            <div class="content " id='study'>
+                <div class='item'>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shuben"></use>
+                    </svg>
+                    在线学习
+                </div>
+                <div class="col-black">                
                 </div>
             </div>
         </div>
@@ -64,6 +80,7 @@
     
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="//at.alicdn.com/t/font_2790264_nz00g42ol7m.js"></script>
 </body>
 
 </html>
